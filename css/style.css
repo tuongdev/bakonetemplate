@@ -1,0 +1,414 @@
+/*Reset css*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/*Define fonts*/
+@font-face {
+	font-family: Lato-Regular;
+	src:url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+	font-family: Lato-Bold;
+	src:url("../fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+	font-family: Lato-Italic;
+	src:url("../fonts/Lato/Lato-Italic.ttf");
+}
+
+@font-face {
+	font-family: Lato-Light;
+	src:url("../fonts/Lato/Lato-Light.ttf");
+}
+
+@font-face {
+	font-family: Lato-LightItalic;
+	src:url("../fonts/Lato/Lato-LightItalic.ttf");
+}
+
+/*html*/
+:root {
+	--primary-color: #444;
+	--second-color: #fff;
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 1020px;
+	margin:auto;
+	font-family: Lato-Regular;
+	color: var(--primary-color);
+}
+
+button:not(header button) {
+	padding-left:13px;
+	padding-right: 13px;
+	line-height: 37px;
+	background-color: #1bbc9b;
+	color: var(--second-color);
+	border:none;
+	font-family: Lato-Bold;
+	font-size: 13px;
+	letter-spacing: 2px;
+	margin-bottom: 47px;
+}
+
+/*menu*/
+.navbar-light .navbar-nav .nav-link {
+	color: var(--primary-color);
+	font-size: 14px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding: 0 12px;
+	line-height: 37px;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover {
+	background-color: #1bbc9b;
+	color: var(--second-color);
+}
+
+.navbar {
+	padding-top:19px;
+	padding-bottom: 19px;
+}
+
+/*Thẻ nào có class là navbar và class fixed-top*/
+.navbar.fixed-top {
+	background-color: rgba(255,255,0,0.8);
+	padding-top:0;
+	padding-bottom: 0;
+	animation: 1s menuAnimation;
+}
+
+@keyframes menuAnimation {
+	from {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+
+.padding-dummy {
+	padding-top:95px;
+}
+
+
+/*home*/
+.home {
+	padding-top:71px;
+	padding-bottom: 82px;	
+	background-image: url("../images/banner.jpg");
+	background-size: cover;
+	background-position: center;
+	color: var(--second-color);
+}
+
+.home h1 {
+	font-family: Lato-Light;
+	font-size: 55px;
+	margin-bottom: 29px;
+}
+
+.home h1 strong {
+	font-family: Lato-Bold;
+}
+
+.home p {
+	font-family: Lato-Light;
+	font-size: 18px;
+	max-width: 576px;
+	margin:auto;
+	margin-bottom: 47px;
+}
+
+
+@media (max-width: 992px) {
+	.navbar {
+		padding-top:0;
+		padding-bottom: 0;
+	}
+
+	.navbar-collapse {
+		align-items: center;
+	    position: absolute;
+	    top: 100%;
+	    width: 100%;
+	    left: 0;
+	    background-color: rgba(128,128,128,0.8);
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
+
+	.padding-dummy {
+		padding-top:57px;
+	}
+}
+
+/*portfolio*/
+.portfolio {
+	padding-top:51px;
+	padding-bottom: 27px; /*61px - 34px*/
+}
+
+.portfolio h2 {
+	font-size: 28px;
+	margin-bottom: 11px;
+}
+
+.portfolio p {
+	font-size: 16px;
+	margin-bottom: 36px;
+}
+
+.portfolio button {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.portfolio img {
+	/*margin-bottom: 34px;*/
+}
+
+.portfolio .box {
+	background-color: green;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 34px;
+}
+
+.portfolio .box .overlay {
+	background-image: url("../images/hover.png");
+	position: absolute;
+	top:0;
+	width: 100%;
+	height:100%;
+	border-radius: 50%;
+	display: flex;
+	/*nội dung sẽ center theo chiều ngang*/
+	justify-content: center;
+
+	/*nội dung sẽ center theo chiều dọc*/
+	align-items: center;
+	color: var(--second-color);
+	pointer-events: none;
+	transform: scale(0);
+	transition: 1s ease;
+
+}
+
+.portfolio .box:hover .overlay {
+	transform: scale(1);
+}
+
+.portfolio .box .overlay span:nth-of-type(1) {
+	line-height: 45px;
+	width: 43px;
+	display: inline-block;
+	text-align: center;
+	background-image: url("../images/search.png");
+	border-radius: 50%;
+	font-size: 21px;
+
+}
+
+.portfolio .box .overlay span:nth-of-type(2) {
+	font-size: 18px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.portfolio .box .overlay span:nth-of-type(3) {
+	font-size: 14px;
+}
+
+/*Chọn thẻ button có class active nằm trong  class portfolio*/
+.portfolio button.active {
+	background-color: #16a086;
+}
+
+/*about*/
+
+.about {
+	padding-top: 54px;
+	padding-bottom: 53px; /*73px - 20px*/
+	background-color: #16a086; 
+}
+
+.about h2 {
+	font-size: 28px;
+	margin-bottom: 12px;
+	color: var(--second-color);
+}
+
+.about > p {
+	font-size: 14px;
+	margin-bottom: 43px;
+	color: var(--second-color);
+}
+
+.about .box {
+	position: relative;
+	
+}
+
+.about .box .overlay {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	background-image: url("../images/hover.png");
+	line-height: 48px;
+	width: 180px;
+	font-size: 29px;
+	display: flex;
+	justify-content: space-evenly;
+	opacity: 0;
+	transition: 1s ease;
+}
+
+.about .box:hover .overlay {
+	opacity: 1;
+}
+
+
+
+
+
+
+.about .box .overlay a {
+	color: var(--second-color);
+}
+
+.about .box-info {
+	width: 220px;
+	background-color: var(--second-color);
+	margin:auto;
+	padding-top:17px;
+	padding-bottom: 19px;
+	margin-bottom: 20px;
+}
+
+.about .box-info h3 {
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+
+.about .box-info em {
+	font-family: Lato-Italic;
+	font-size: 14px;
+	margin-bottom: 18px;
+	display: inline-block;
+}
+
+.about .box-info p {
+	font-size: 14px;
+	text-align: left;
+	padding-left:10px;
+	padding-right: 10px;
+
+}
+
+.contact {
+	padding-top: 49px;
+	padding-bottom: 13px; /*60px - 47px*/
+	background-color: #ecf0f1;
+}
+
+.contact h2 {
+	font-size: 28px;
+	margin-bottom: 11px;
+}
+
+.contact > p {
+	font-size: 14px;
+	margin-bottom: 51px;
+}
+
+.contact input, 
+.contact textarea {
+	border: 2px solid #bec3c7;
+	border-radius: 0;
+	margin-bottom: 22px;
+}
+
+.contact input {
+	height: 47px;
+	
+}
+
+.contact textarea {
+	height: 153px;
+}
+
+.contact ::placeholder {
+	font-family: Lato-Italic;
+	font-size: 14px;
+	color: #999;
+}
+
+.contact button[type=submit] {
+	padding-left:28px;
+	padding-right: 28px;
+}
+
+.contact h3 {
+	font-size: 14px;
+	margin-bottom: 19px;
+}
+
+.contact address {
+	line-height: 21px;
+	font-size: 14px;
+	margin-bottom: 24px;
+}
+
+.contact address ~ p {
+	font-size: 14px;
+	margin-bottom: 17px;
+}
+
+.contact address p {
+	padding-left:5px;
+	margin-top:-4px;
+}
+
+footer {
+	background-color: #2d3e50;
+	height: 87px;
+	color: var(--second-color);
+	display: flex;
+	/*center theo chiều dọc*/
+	align-items: center;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+footer a {
+	line-height: 44px;
+	width:44px;
+	background-color: #1bbc9b;
+	text-align: center;
+	color: var(--second-color) !important;
+	display: inline-block;
+	position: fixed;
+	bottom: 20px;
+	right: 42px;
+}
